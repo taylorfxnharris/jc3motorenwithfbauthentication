@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+	<title>JC3 Motoren - A Pure Automotive Experience</title>
+	
+		<!-- Bootstrap core CSS -->
+	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Plugins -->
+	<link href="assets/css/simpletextrotator.css" rel="stylesheet">
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+	<link href="assets/css/et-line-font.css" rel="stylesheet">
+	<link href="assets/css/magnific-popup.css" rel="stylesheet">
+	<link href="assets/css/flexslider.css" rel="stylesheet">
+	<link href="assets/css/animate.css" rel="stylesheet">
+	
+	<!-- Template core CSS -->
+	<link href="assets/css/style.css" rel="stylesheet">
+	
+	<!-- Custom css -->
+	<link href="assets/css/custom.css" rel="stylesheet">
+	
+	<!-- Parse -->
+	<script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script>
+	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+	
+	
+</head>
+<body>
+
+					
+	<script type="text/javascript">
+Parse.initialize("8Qw2DzNaDuV15Ou76J8h9VVrLBLja1buUo9Y9L8K", "2lhu9HuMIzpk6fSzHQyvOa3nLCtLjmnasok6z7r6");
+            
+  window.fbAsyncInit = function() {
+    Parse.FacebookUtils.init({
+      appId      : '1507266082926134',
+      channelUrl : 'http://jc3motoren.com/channel.html', // Channel File
+      status     : true,  // check Facebook Login status
+      cookie     : true,  // enable cookies to allow Parse to access the session
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+    
+   Parse.FacebookUtils.logIn(null, {
+  success: function(user) {
+    if (!user.existed()) {
+      alert("User signed up and logged in through Facebook!");
+    } else {
+      alert("User logged in through Facebook!");
+    }
+  },
+  error: function(user, error) {
+    alert("User cancelled the Facebook login or did not fully authorize.");
+  }
+});
+
+    
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+
+function Login()
+    {
+ 
+        FB.login(function(response) {
+           if (response.authResponse) 
+           {
+                getUserInfo(); // Get User Information.
+ 
+            } else
+            {
+             console.log('Authorization failed.');
+            }
+         },{scope: 'email'});
+ 
+    }
+
+
+ function getUserInfo() {
+        FB.api('/me', function(response) {
+ 
+      var str="<b>Name</b> : "+response.name+"<br>";
+          str +="<b>Link: </b>"+response.link+"<br>";
+          str +="<b>Username:</b> "+response.username+"<br>";
+          str +="<b>id: </b>"+response.id+"<br>";
+          str +="<b>Email:</b> "+response.email+"<br>";
+          str +="<input type='button' value='Get Photo' onclick='getPhoto();'/>";
+          str +="<input type='button' value='Logout' onclick='Logout();'/>";
+          document.getElementById("status").innerHTML=str;
+  
+        });
+   }
+
+FB.Event.subscribe('auth.authResponseChange', function(response) 
+{
+     if (response.status === 'connected') 
+     {
+        //SUCCESS
+     }   
+     else if (response.status === 'not_authorized') 
+    {
+        //FAILED
+    } else
+    {
+        //UNKNOWN ERROR. Logged Out
+    }
+});
+
+
+function Logout()
+{
+    FB.logout(function(){document.location.reload();});
+ 
+}
+
+
+//Create a new user on Parse
+  var user = new Parse.User();
+  user.set("username", $scope.data.username);
+  user.set("password", $scope.data.password);
+  user.set("email", $scope.data.email);                
+               
+</script>
+
+
+
+
+
+
+
+
+
+	<!-- PRELOADER -->
+	<div class="page-loader">
+		<div class="loader">Loading...</div>
+	</div>
+	<!-- /PRELOADER -->
+
+		<!-- NAVIGATION -->
+	<nav class="navbar navbar-custom navbar-transparent navbar-fixed-top" role="navigation">
+
+			<div class="container">
+		
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">JC3 Motoren</a>
+				</div>
+		
+				<div class="collapse navbar-collapse" id="custom-collapse">
+		
+					<ul class="nav navbar-nav navbar-right">
+		
+
+						<li><a href="index-7.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="contact.html">Sneak Peak</a></li>
+						<li><a href="contact.html">Certified Parts</a></li>
+						<li><a href="contact.html">Contact</a></li>
+		
+					</ul>
+				</div>
+		
+			</div>
+
+	</nav>
+	<!-- /NAVIGATION -->
+
+	<!-- HOME -->
+	<section id="home" class="module-hero module-parallax module-fade bg-dark-30" data-background="assets/images/section-11.jpg">
+
+		<div class="hs-caption container">
+			<div class="caption-content">
+				<div><img alt="JC3 Motoren" src="assets/images/jlogo.png"></div>
+				<div class="hs-title-size-4 font-alt m-b-30">
+					A Pure Automotive Experience
+				</div>
+				
+				
+				<div class="hs-title-size-1 font-inc">
+					A wonderful serenity has taken possession of my entire soul, like these<br/> sweet mornings of spring which I enjoy with my whole heart
+					<br>
+					<br>
+					<br>
+					<br>
+					<div>
+					<a href="http://eepurl.com/bARyTT"<button type="button" class="btn btn-default">Join Waiting List</button></a>
+					</div>	
+					
+		<fb:login-button scope="public_profile,email" data-auto-logout-link="true" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div>			
+					<div class="fb-login-button" scope="public_profile,email" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+				</div>
+				
+			</div>
+		</div>
+
+		<!-- Youtube player start-->
+		<div class="video-player" data-property="{videoURL:'https://www.youtube.com/watch?v=UPAr2cSUcFw', containment:'.module-hero', startAt:0, mute:false, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
+		<!-- Youtube player end -->
+
+		<!-- Youtube controls start-->
+		<div class="video-controls-box">
+			<div class="container">
+				<div class="video-controls">
+					<a id="video-volume" class="fa fa-volume-up" href="#">&nbsp;</a>
+					<a id="video-play" class="fa fa-pause" href="#">&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<!-- Youtube controls end -->
+
+	</section >
+	<!-- /HOME -->
+
+	<!-- WRAPPER -->
+	<div class="wrapper">
+
+		<!-- PORTFOLIO -->
+		<section class="module-small p-t-20 p-b-0 p-t-sm-0">
+
+			<div class="container hidden-xs">
+
+				<!-- PORTFOLIO FILTER -->
+				<div class="row">
+					<div class="col-sm-12">
+
+						<ul id="filters" class="filter font-inc">
+							<li><a href="modifications.html" data-filter=".illustration" class="wow fadeInUp" data-wow-delay="0.2s">Modifications</a></li>
+						</ul>
+
+					</div>
+				</div>
+				<!-- /PORTFOLIO FILTER -->
+
+			</div>
+
+			<!-- PORTFOLIO LIST -->
+			<ul id="works-grid" class="works-grid works-grid-masonry works-grid-3 works-hover-w">
+
+				<!-- PORTFOLIO ITEM -->
+				<li class="work-item illustration photography">
+					<a href="modifications.html">
+						<div class="work-image">
+							<img src="assets/images/accessories.png" alt="">
+						</div>
+						<div class="work-caption">
+							<h3 class="work-title font-alt">Accessories</h3>
+							<div class="work-descr font-inc">
+								
+							</div>
+						</div>
+					</a>
+				</li>
+				<!-- /PORTFOLIO ITEM -->
+
+				<!-- PORTFOLIO ITEM -->
+				<li class="work-item illustration photography">
+					<a href="modifications.html">
+						<div class="work-image">
+							<img src="assets/images/performance.png" alt="">
+						</div>
+						<div class="work-caption">
+							<h3 class="work-title font-alt">Performance Parts</h3>
+							<div class="work-descr font-inc">
+								
+							</div>
+						</div>
+					</a>
+				</li>
+				<!-- /PORTFOLIO ITEM -->
+
+				<!-- PORTFOLIO ITEM -->
+				<li class="work-item illustration photography">
+					<a href="modifications.html">
+						<div class="work-image">
+							<img src="assets/images/safety.png" alt="">
+						</div>
+						<div class="work-caption">
+							<h3 class="work-title font-alt">Safety</h3>
+							<div class="work-descr font-inc">
+								
+							</div>
+						</div>
+					</a>
+				</li>
+				<!-- /PORTFOLIO ITEM -->
+			</ul>
+			
+			<!-- /PORTFOLIO LIST -->
+
+		</section>
+		<!-- /PORTFOLIO -->
+
+		<!-- TESTIMONIAL -->
+		<section class="module-small">
+
+			<div class="container">
+
+				<div class="row">
+
+					<!-- MODULE TITLE -->
+					<div class="col-sm-6">
+						<h2 class="module-title font-alt">Certified Parts</h2>
+					</div>
+					<!-- /MODULE TITLE -->
+
+					<!-- BLOCKQUOTE -->
+					<div class="col-sm-6">
+						<blockquote class="font-serif align-right">
+							<p>Spec Carts are your canvas to paint a work of art. Everything from carbon fiber race seats to flap jackets. Your Spec Cart is what you make it. Surf through certified spec cart parts.</p>
+							
+						</blockquote>
+					</div>
+					<!-- /BLOCKQUOTE -->
+
+				</div>
+
+			</div>
+
+		</section>
+		<!-- /TESTIMONIAL -->
+
+	
+		<!-- CONTACT -->
+		<section class="module-small">
+		
+			<div class="container">
+		
+				<div class="row">
+		
+					<!-- CONTENT BOX -->
+					<div class="col-sm-4">
+						<div class="content-box">
+							<div class="content-box-icon">
+								<span class="icon-map-pin"></span>
+							</div>
+							<div class="content-box-title font-inc">
+								007 Steet, City, USA
+							</div>
+						</div>
+					</div>
+					<!-- /CONTENT BOX -->
+		
+					<!-- CONTENT BOX -->
+					<div class="col-sm-4">
+						<div class="content-box">
+							<div class="content-box-icon">
+								<span class="icon-phone"></span>
+							</div>
+							<div class="content-box-title font-inc">
+								+1 234 567 89 00
+							</div>
+						</div>
+					</div>
+					<!-- /CONTENT BOX -->
+		
+					<!-- CONTENT BOX -->
+					<div class="col-sm-4">
+						<div class="content-box">
+							<div class="content-box-icon">
+								<span class="icon-envelope"></span>
+							</div>
+							<div class="content-box-title font-inc">
+								semantic@email.com
+							</div>
+						</div>
+					</div>
+					<!-- /CONTENT BOX -->
+		
+				</div>
+		
+			</div>
+		
+		</section>
+		<!-- /CONTACT -->
+
+		<!-- FOOTER -->
+		<footer class="footer">
+		
+			<div class="container">
+		
+				<div class="row">
+		
+					<div class="col-sm-12 text-center">
+						<p class="copyright font-inc m-b-0">© 2015 <a href="index.html">JC3 Motoren</a>, All Rights Reserved.</p>
+					</div>
+		
+				</div>
+		
+			</div>
+		
+		</footer>
+		<!-- /FOOTER -->
+	</div>
+	<!-- /WRAPPER -->
+
+	<!-- Scroll-up -->
+	<div class="scroll-up">
+		<a href="#totop"><i class="fa fa-angle-double-up"></i></a>
+	</div>
+	
+	<!-- Javascript files -->
+	<script src="assets/js/jquery-2.1.3.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+	<script src="assets/js/appear.js"></script>
+	<script src="assets/js/jquery.simple-text-rotator.min.js"></script>
+	<script src="assets/js/jqBootstrapValidation.js"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script src="assets/js/gmaps.js"></script>
+	<script src="assets/js/isotope.pkgd.min.js"></script>
+	<script src="assets/js/imagesloaded.pkgd.js"></script>
+	<script src="assets/js/jquery.flexslider-min.js"></script>
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="assets/js/jquery.fitvids.js"></script>
+	<script src="assets/js/smoothscroll.js"></script>
+	<script src="assets/js/wow.min.js"></script>
+	<script src="assets/js/contact.js"></script>
+	<script src="assets/js/custom.js"></script>
+
+</body>
+</html>

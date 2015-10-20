@@ -1,0 +1,30 @@
+{
+  "name": "jc3motoren.com",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "latest",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "latest",
+    "ejs": "latest",
+    "express": "^4.13.3",
+    "express-session": "latest",
+    "mongoose": "latest",
+    "morgan": "~1.5.2",
+    "passport": "^0.3.0",
+    "passport-facebook": "^2.0.0",
+    "passport-local": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "jc3motoren"
+  },
+  "description": ""
+}
