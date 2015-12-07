@@ -14,6 +14,8 @@ var configDB = require('./config/database.js');
 mongoose.connect((configDB.url));
 require('./config/passport')(passport);
 
+
+app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -24,7 +26,6 @@ app.use(session({secret: 'anystringoftext',
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
-
 
 
 

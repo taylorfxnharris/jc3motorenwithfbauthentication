@@ -4,6 +4,14 @@ module.exports = function(app, passport){
 		res.render('index.ejs');
 	});
 
+	app.get('/index3', function(req, res){
+		res.render('index3.ejs');
+	});
+
+	app.get('/test', function(req, res){
+		res.render('test.ejs');
+	});
+
 	app.get('/login', function(req, res){
 		res.render('login.ejs', { message: req.flash('loginMessage') });
 	});
@@ -23,6 +31,10 @@ module.exports = function(app, passport){
 		failureRedirect: '/signup',
 		failureFlash: true
 	}));
+
+	app.get('/about', function(req, res){
+		res.render('about.ejs');
+	});
 
 	app.get('/profile', isLoggedIn, function(req, res){
 		res.render('profile.ejs', { user: req.user });
